@@ -4,8 +4,8 @@ function validateForm(event) {
          const numberInput = document.getElementById("numberInput").value;
 
          if (allowedCodes.includes(numberInput)) {
-             alert("112233!");
+             alert("الرقم صحيح!");
          } else {
-             alert("123456 !");
+             alert("الرقم غير صحيح!");
          }
      }
