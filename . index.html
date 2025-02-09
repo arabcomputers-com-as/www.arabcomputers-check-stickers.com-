@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحقق من الباركود</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>التحقق من الباركود</h1>
+    <p>أدخل الرقم المكون من 6 أرقام:</p>
+    <input type="text" id="barcodeInput" placeholder="أدخل الرقم هنا" maxlength="6">
+    <button onclick="checkBarcode()">تحقق</button>
+    <p id="result"></p>
+
+    <script>
+        function checkBarcode() {
+            // الأرقام المسموح بها (6 أرقام)
+            const allowedCodes = ["123456", "654321", "433221", "566778"];
+            const input = document.getElementById("barcodeInput").value;
+            const resultElement = document.getElementById("result");
+
+            // التحقق من أن الرقم يتكون من 6 أرقام
+            if (input.length !== 6 || isNaN(input)) {
+                resultElement.textContent = "الرقم يجب أن يتكون من 6 أرقام!";
+                resultElement.style.color = "red";
+                return; // إيقاف الدالة إذا كان الرقم غير صالح
+            }
+
+            if (allowedCodes.includes(input)) {
+                resultElement.textContent = "الرقم صحيح! يتم توجيهك إلى الموقع...";
+                resultElement.style.color = "green";
+                window.location.href = "https://arabcomputrs.wordpress.com/"; // الرابط الذي تريد توجيه المستخدم إليه
+            } else {
+                resultElement.textContent = "الرقم غير صحيح!";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
