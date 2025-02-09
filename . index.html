@@ -18,32 +18,24 @@
 </head>
 <body>
     <h1>التحقق من الباركود</h1>
-    <p>أدخل الرقم المكون من 6 أرقام:</p>
-    <input type="text" id="barcodeInput" placeholder="أدخل الرقم هنا" maxlength="6">
-    <button onclick="checkBarcode()">تحقق</button>
+    <p>أدخل الرقم للتحقق:</p>
+    <form onsubmit="validateForm(event)">
+        <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
+        <button type="submit">تحقق</button>
+    </form>
     <p id="result"></p>
 
     <script>
-        function checkBarcode() {
-            // الأرقام المسموح بها (6 أرقام)
-            const allowedCodes = ["123456", "654321", "433221", "566778"];
-            const input = document.getElementById("barcodeInput").value;
-            const resultElement = document.getElementById("result");
+        function validateForm(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+            const allowedCodes = ["123456789012", "987654321098"]; // الأرقام المسموح بها
+            const numberInput = document.getElementById("numberInput").value;
 
-            // التحقق من أن الرقم يتكون من 6 أرقام
-            if (input.length !== 6 || isNaN(input)) {
-                resultElement.textContent = "الرقم يجب أن يتكون من 6 أرقام!";
-                resultElement.style.color = "red";
-                return; // إيقاف الدالة إذا كان الرقم غير صالح
-            }
-
-            if (allowedCodes.includes(input)) {
-                resultElement.textContent = "الرقم صحيح! يتم توجيهك إلى الموقع...";
-                resultElement.style.color = "green";
-                window.location.href = "https://arabcomputrs.wordpress.com/"; // الرابط الذي تريد توجيه المستخدم إليه
+            if (allowedCodes.includes(numberInput)) {
+                // توجيه المستخدم إلى موقعك إذا كان الرقم صحيحًا
+                window.location.href = "https://arabcomputrs.wordpress.com/";
             } else {
-                resultElement.textContent = "الرقم غير صحيح!";
-                resultElement.style.color = "red";
+                alert("الرقم غير صحيح!"); // رسالة إذا كان الرقم غير صحيح
             }
         }
     </script>
