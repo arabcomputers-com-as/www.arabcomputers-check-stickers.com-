@@ -28,14 +28,13 @@
     <script>
         function validateForm(event) {
             event.preventDefault(); // منع إعادة تحميل الصفحة
-            const allowedCodes = ["123456789012", "987654321098", "223311", "354545"]; // الأرقام المسموح بها
+            const allowedCodes = ["123456789012", "987654321098"]; // الأرقام المسموح بها
             const numberInput = document.getElementById("numberInput").value;
 
             if (allowedCodes.includes(numberInput)) {
-                // توجيه المستخدم إلى موقعك إذا كان الرقم صحيحًا
-                window.location.href = "https://arabcomputrs.wordpress.com/";
+                alert("112233!"); // رسالة إذا كان الرقم صحيحًا
             } else {
-                alert("الرقم غير صحيح!"); // رسالة إذا كان الرقم غير صحيح
+                alert("123456!"); // رسالة إذا كان الرقم غير صحيح
             }
         }
     </script>
