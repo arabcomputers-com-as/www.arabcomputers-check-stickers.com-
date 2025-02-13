@@ -28,7 +28,7 @@
     <script>
         function validateForm(event) {
             event.preventDefault(); // منع إعادة تحميل الصفحة
-            const allowedCodes = ["123456789012", "112233", "123456", "987654321098"]; // الأرقام المسموح بها
+            const allowedCodes = ["123456789012", "11223344", "12345678", "654321", "87654321", "11111111", "22222222", "987654321098"]; // الأرقام المسموح بها
             const numberInput = document.getElementById("numberInput").value;
 
             console.log("الرقم المدخل:", numberInput); // مراقبة الرقم المدخل
