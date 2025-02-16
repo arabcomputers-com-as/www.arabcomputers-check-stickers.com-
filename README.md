@@ -48,8 +48,8 @@
                 localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
                 console.log("تم إضافة الرقم إلى الأرقام المستخدمة:", usedCodes); // مراقبة الأرقام المستخدمة بعد الإضافة
 
-                // توجيه المستخدم إلى موقعك إذا كان الرقم صحيحًا
-                window.location.href = "https://arabcomputrs.wordpress.com/";
+                // 
+                window.location.href = "الرقم صحيح";
             } else {
                 alert("الرقم غير صحيح!"); // رسالة إذا كان الرقم غير صحيح
             }
