@@ -71,10 +71,7 @@
                 localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
                 resultElement.textContent = "✓ الرقم صحيح! جاري التوجيه إلى الموقع...";
                 resultElement.className = 'success';
-                
-                // التوجيه بعد ثانيتين
-                setTimeout(() => {
-                    window.location.href = "https://arabcomputrs.wordpress.com/";
+            
                 }, 2000);
             } else {
                 resultElement.textContent = "✗ الرقم غير صحيح!";
