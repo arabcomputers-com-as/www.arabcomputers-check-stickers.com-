@@ -30,35 +30,58 @@
             font-size: 1.2rem;
             color: #555;
         }
-        form {
-            margin-top: 20px;
+        .input-container {
+            position: relative;
+            margin: 20px 0;
         }
-        input, button {
+        .input-container input {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            box-sizing: border-box;
+            padding: 15px;
+            border: 2px solid #3498db;
+            border-radius: 25px; /* حواف دائرية */
+            font-size: 1.2rem;
+            outline: none;
+            transition: border-color 0.3s ease;
         }
-        input {
-            background-color: #f9f9f9;
+        .input-container input:focus {
+            border-color: #2980b9;
+        }
+        .input-container label {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #777;
+            background-color: #fff;
+            padding: 0 5px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        .input-container input:focus + label,
+        .input-container input:not(:placeholder-shown) + label {
+            top: 0;
+            font-size: 1rem;
+            color: #3498db;
         }
         button {
-            background-color: #3498db;
+            width: 100%;
+            padding: 15px;
+            background-color: #f1c40f; /* لون أصفر */
             color: white;
             border: none;
+            border-radius: 25px; /* حواف دائرية */
+            font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: #f39c12; /* لون أصفر داكن */
         }
         #result {
             margin-top: 20px;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1.1rem;
         }
         .success {
@@ -118,10 +141,14 @@
         <h1>Yobazar - تحقق من ملصق الضمان</h1>
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
-        <form onsubmit="validateForm(event)">
-            <input type="text" id="numberInput" placeholder="أدخل الرقم الموجود على الملصق هنا">
-            <button type="submit">تحقق</button>
-        </form>
+        <!-- تصميم جديد لمكان إدخال الرقم -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder=" ">
+            <label for="numberInput">أدخل الرقم الموجود على الملصق هنا</label>
+        </div>
+
+        <!-- زر "Check" بألوان صفراء -->
+        <button type="submit" onclick="validateForm(event)">Check</button>
         <div id="result"></div>
 
         <!-- روابط مفيدة -->
