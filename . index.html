@@ -30,9 +30,15 @@
             font-size: 1.2rem;
             color: #555;
         }
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* المسافة بين العناصر */
+            margin: 20px 0;
+        }
         .input-container {
             position: relative;
-            margin: 20px 0;
+            flex: 1; /* يأخذ المساحة المتبقية */
         }
         .input-container input {
             width: 100%;
@@ -65,8 +71,7 @@
             color: #3498db;
         }
         button {
-            width: 100%;
-            padding: 15px;
+            padding: 15px 30px;
             background-color: #f1c40f; /* لون أصفر */
             color: white;
             border: none;
@@ -141,14 +146,15 @@
         <h1>Yobazar - تحقق من ملصق الضمان</h1>
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
-        <!-- تصميم جديد لمكان إدخال الرقم -->
-        <div class="input-container">
-            <input type="text" id="numberInput" placeholder=" ">
-            <label for="numberInput">أدخل الرقم الموجود على الملصق هنا</label>
+        <!-- تصميم جديد لمكان إدخال الرقم مع زر "Check" على اليمين -->
+        <div class="input-group">
+            <div class="input-container">
+                <input type="text" id="numberInput" placeholder=" ">
+                <label for="numberInput">أدخل الرقم الموجود على الملصق هنا</label>
+            </div>
+            <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
-        <!-- زر "Check" بألوان صفراء -->
-        <button type="submit" onclick="validateForm(event)">Check</button>
         <div id="result"></div>
 
         <!-- روابط مفيدة -->
