@@ -13,6 +13,28 @@
         #result {
             margin-top: 20px;
             font-size: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -23,32 +45,40 @@
         <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
         <button type="submit">تحقق</button>
     </form>
-    <p id="result"></p>
+    <div id="result"></div>
 
     <script>
         function validateForm(event) {
-            event.preventDefault(); // منع إعادة تحميل الصفحة
-            const allowedCodes = ["123456789012", "11223344", "12345678", "654321", "87654321", "11111111", "22222222", "987654321098"]; // الأرقام المسموح بها
+            event.preventDefault();
+            const allowedCodes = ["123456789012", "11223344", "12345678", "654321", "87654321", "11111111", "22222222", "987654321098"];
             const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            
+            // مسح الرسالة السابقة
+            resultElement.className = '';
+            resultElement.textContent = '';
 
-            console.log("الرقم المدخل:", numberInput); // مراقبة الرقم المدخل
-
-            // استرجاع الأرقام التي تم استخدامها مسبقًا من التخزين المحلي
             const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
-            console.log("الأرقام المستخدمة:", usedCodes); // مراقبة الأرقام المستخدمة
 
             if (usedCodes.includes(numberInput)) {
-                alert("هذا الرقم تم استخدامه مسبقًا!"); // رسالة إذا كان الرقم مستخدمًا
-                return; // إيقاف الدالة إذا كان الرقم مستخدمًا
+                resultElement.textContent = "هذا الرقم تم استخدامه مسبقًا!";
+                resultElement.className = 'error';
+                return;
             }
 
             if (allowedCodes.includes(numberInput)) {
-                // إضافة الرقم إلى قائمة الأرقام المستخدمة
                 usedCodes.push(numberInput);
                 localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                console.log("تم إضافة الرقم إلى الأرقام المستخدمة:", usedCodes); // مراقبة الأرقام المستخدمة بعد الإضافة
+                resultElement.textContent = "✓ الرقم صحيح! جاري التوجيه إلى الموقع...";
+                resultElement.className = 'success';
                 
-                alert("الرقم غير صحيح!"); // رسالة إذا كان الرقم غير صحيح
+                // التوجيه بعد ثانيتين
+                setTimeout(() => {
+                    window.location.href = "https://arabcomputrs.wordpress.com/";
+                }, 2000);
+            } else {
+                resultElement.textContent = "✗ الرقم غير صحيح!";
+                resultElement.className = 'error';
             }
         }
     </script>
