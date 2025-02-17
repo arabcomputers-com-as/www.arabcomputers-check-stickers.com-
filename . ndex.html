@@ -30,55 +30,28 @@
             font-size: 1.2rem;
             color: #555;
         }
-        .input-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
         .input-container {
             position: relative;
-            flex: 1;
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-        .input-container input {
-            width: 100%;
-            padding: 15px;
             border: 2px solid #3498db;
             border-radius: 25px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .input-container input {
+            flex: 1;
+            padding: 15px;
+            border: none;
             font-size: 1.2rem;
             outline: none;
-            transition: border-color 0.3s ease;
-        }
-        .input-container input:focus {
-            border-color: #2980b9;
-        }
-        .input-container label {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            font-size: 1.2rem;
-            color: #777;
-            background-color: #fff;
-            padding: 0 5px;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-        .input-container input:focus + label,
-        .input-container input:not(:placeholder-shown) + label {
-            top: 0;
-            font-size: 1rem;
-            color: #3498db;
         }
         .input-container button {
             padding: 15px 30px;
             background-color: #f1c40f;
             color: white;
             border: none;
-            border-radius: 0; /* حواف مربعة */
             font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
@@ -149,13 +122,10 @@
         <h1>Yobazar - تحقق من ملصق الضمان</h1>
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
-        <!-- تصميم جديد لمكان إدخال الرقم مع زر "Check" على اليمين -->
-        <div class="input-group">
-            <div class="input-container">
-                <input type="text" id="numberInput" placeholder=" ">
-                <label for="numberInput">أدخل الرقم الموجود على الملصق هنا</label>
-                <button type="submit" onclick="validateForm(event)">Check</button>
-            </div>
+        <!-- تصميم جديد لمكان إدخال الرقم مع زر "Check" -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
+            <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
         <div id="result"></div>
