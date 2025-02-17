@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -114,6 +113,31 @@
         }
         .links div {
             margin: 10px;
+        }
+
+        /* Media Queries للأجهزة المحمولة */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* تصغير حجم العنوان */
+            }
+            p {
+                font-size: 1rem; /* تصغير حجم النص */
+            }
+            .input-container {
+                width: 80%; /* زيادة عرض الحاوية لتناسب الشاشات الصغيرة */
+            }
+            .input-container input {
+                font-size: 0.9rem; /* تصغير حجم الخط في حقل الإدخال */
+            }
+            .input-container button {
+                font-size: 0.9rem; /* تصغير حجم الخط في الزر */
+            }
+            #result {
+                font-size: 1rem; /* تصغير حجم الخط في النتيجة */
+            }
+            .links div {
+                margin: 5px; /* تقليل المسافة بين الروابط */
+            }
         }
     </style>
 </head>
