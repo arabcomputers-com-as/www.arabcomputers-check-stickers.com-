@@ -111,23 +111,23 @@
         .links div {
             margin: 10px;
         }
-    <style>
-    /* التعديلات على العناصر المطلوبة */
-    .input-container {
-        width: 50%; /* تصغير العرض */
-        border-radius: 25px 0 0 25px; /* حواف دائرية من اليسار فقط */
-    }
-    .input-container input {
-        padding: 12px; /* تصغير الحشو */
-        font-size: 1rem; /* تصغير حجم الخط */
-        border-radius: 25px 0 0 25px; /* تأكيد الحواف الدائرية لليسار فقط */
-    }
-    .input-container button {
-        padding: 12px 20px; /* تصغير الحشو */
-        font-size: 1rem; /* تصغير حجم الخط */
-        border-radius: 0; /* حواف مربعة من جميع الجهات */
-    }
-</style> type="submit" onclick="validateForm(event)">Check</button>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- إضافة صورة شعار -->
+        <img src="https://imgur.com/a/MSEKx2R" alt="شعار الموقع" class="logo">
+        
+        <!-- إضافة صورة بانر -->
+        <img src="https://via.placeholder.com/600x200" alt="بانر الموقع" class="banner">
+
+        <h1>Yobazar - تحقق من ملصق الضمان</h1>
+        <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
+
+        <!-- تصميم جديد لمكان إدخال الرقم مع زر "Check" -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
+            <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
         <div id="result"></div>
