@@ -32,31 +32,31 @@
         }
         .input-container {
             position: relative;
-            width: 50%; /* تم تصغير العرض */
+            width: 50%; /* تقليل عرض الحقل */
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
-            border-radius: 25px 0 0 25px; /* دائري من اليسار فقط */
+            border-radius: 25px;
             overflow: hidden;
-            margin: 20px auto;
+            margin: 20px auto; /* توسيط الحقل */
         }
         .input-container input {
             flex: 1;
-            padding: 12px; /* تصغير الحشو */
+            padding: 15px;
             border: none;
-            font-size: 1rem; /* تصغير حجم الخط */
+            font-size: 1.2rem;
             outline: none;
-            border-radius: 25px 0 0 25px; /* تطابق مع الحاوية */
+            border-radius: 25px 0 0 25px; /* حواف دائرية من اليسار فقط */
         }
         .input-container button {
-            padding: 12px 20px; /* تصغير الحشو */
+            padding: 15px 30px;
             background-color: #f1c40f;
             color: white;
             border: none;
-            font-size: 1rem; /* تصغير حجم الخط */
+            font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            border-radius: 0; /* حواف مربعة */
+            border-radius: 0 25px 25px 0; /* حواف مربعة من اليمين */
         }
         .input-container button:hover {
             background-color: #f39c12;
@@ -115,12 +115,16 @@
 </head>
 <body>
     <div class="container">
+        <!-- إضافة صورة شعار -->
         <img src="https://imgur.com/a/MSEKx2R" alt="شعار الموقع" class="logo">
+        
+        <!-- إضافة صورة بانر -->
         <img src="https://via.placeholder.com/600x200" alt="بانر الموقع" class="banner">
 
         <h1>Yobazar - تحقق من ملصق الضمان</h1>
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
+        <!-- تصميم جديد لمكان إدخال الرقم مع زر "Check" -->
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
             <button type="submit" onclick="validateForm(event)">Check</button>
@@ -128,6 +132,7 @@
 
         <div id="result"></div>
 
+        <!-- روابط مفيدة -->
         <div class="links">
             <div>
                 <h3>روابط مفيدة</h3>
@@ -154,6 +159,7 @@
             </div>
         </div>
 
+        <!-- تذييل الصفحة -->
         <div class="footer">
             <p>للصيانة: <a href="#">زيارة AC-Care</a></p>
             <p>للمبيعات الفردية: <a href="#">نقاط البيع</a></p>
@@ -165,7 +171,7 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = ["123456789012", "11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
+            const allowedCodes = ["123456789012", "11223344", "12345678", "654321", "87654321", "11111111", "22222222", "987654321098"];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
