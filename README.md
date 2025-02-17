@@ -150,7 +150,7 @@
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
         <div class="input-container">
-            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا" onkeypress="handleKeyPress(event)">
+            <input type="text" id="numberInput" placeholder="XXXXXX " onkeypress="handleKeyPress(event)">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
