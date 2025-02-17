@@ -32,13 +32,13 @@
         }
         .input-container {
             position: relative;
-            width: 100%;
+            width: 60%; /* تقليل عرض الحقل */
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
             border-radius: 25px;
             overflow: hidden;
-            margin: 20px 0;
+            margin: 20px auto; /* توسيط الحقل */
         }
         .input-container input {
             flex: 1;
@@ -46,6 +46,7 @@
             border: none;
             font-size: 1.2rem;
             outline: none;
+            border-radius: 25px 0 0 25px; /* حواف دائرية من اليسار فقط */
         }
         .input-container button {
             padding: 15px 30px;
@@ -55,6 +56,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border-radius: 0 25px 25px 0; /* حواف مربعة من اليمين */
         }
         .input-container button:hover {
             background-color: #f39c12;
