@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -32,34 +33,37 @@
         }
         .input-container {
             position: relative;
-            width: 50%; /* تم تصغير العرض */
+            width: 50%;
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
-            border-radius: 25px 0 0 25px; /* دائري من اليسار فقط */
+            border-radius: 25px 0 0 25px;
             overflow: hidden;
             margin: 20px auto;
         }
         .input-container input {
             flex: 1;
-            padding: 12px; /* تصغير الحشو */
+            padding: 12px;
             border: none;
-            font-size: 1rem; /* تصغير حجم الخط */
+            font-size: 1rem;
             outline: none;
-            border-radius: 25px 0 0 25px; /* تطابق مع الحاوية */
+            border-radius: 25px 0 0 25px;
         }
         .input-container button {
-            padding: 12px 20px; /* تصغير الحشو */
+            padding: 12px 20px;
             background-color: #f1c40f;
             color: white;
             border: none;
-            font-size: 1rem; /* تصغير حجم الخط */
+            font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            border-radius: 0; /* حواف مربعة */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 0;
         }
         .input-container button:hover {
             background-color: #f39c12;
+        }
+        .input-container button:active {
+            transform: scale(0.95);
         }
         #result {
             margin-top: 20px;
@@ -122,7 +126,7 @@
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
         <div class="input-container">
-            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
+            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا" onkeypress="handleKeyPress(event)">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
