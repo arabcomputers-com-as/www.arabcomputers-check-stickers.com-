@@ -315,3 +315,87 @@ Enter the number shown on the sticker in this box:
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty sticker validation</title>
+    <style>
+        /* ... (ابقى الأنماط كما هي) ... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ... (ابقى الهيكل الأساسي كما هو) ... -->
+
+        <!-- حقل الإدخال والزر -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
+            <button type="submit" onclick="validateForm(event)">Check</button>
+        </div>
+
+        <!-- نتيجة التحقق -->
+        <div id="result"></div>
+
+        <!-- ... (ابقى بقية العناصر كما هي) ... -->
+    </div>
+
+    <script>
+        // دالة لتوليد رمز عشوائي
+        function generateRandomCode(length = 12) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        // إنشاء مجموعة من الرموز الفريدة
+        const allowedCodes = new Set(["123456789012", "DH5P3EF8N"]); // الرموز الافتراضية
+        const totalCodes = 30000;
+
+        // توليد الرموز حتى الوصول للعدد المطلوب
+        while (allowedCodes.size < totalCodes + 2) { // +2 للرموز الافتراضية الموجودة
+            const newCode = generateRandomCode();
+            allowedCodes.add(newCode);
+        }
+
+        // دالة التحقق
+        function validateForm(event) {
+            event.preventDefault();
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            
+            resultElement.className = '';
+            resultElement.textContent = '';
+
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            if (usedCodes.includes(numberInput)) {
+                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                resultElement.className = 'error';
+                return;
+            }
+
+            if (allowedCodes.has(numberInput)) {
+                usedCodes.push(numberInput);
+                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                resultElement.className = 'success';
+            } else {
+                resultElement.textContent = "❌ الرقم غير صحيح!";
+                resultElement.className = 'error';
+            }
+        }
+
+        // دالة للتعامل مع الضغط على Enter
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                validateForm(event);
+            }
+        }
+    </script>
+</body>
+</html>
