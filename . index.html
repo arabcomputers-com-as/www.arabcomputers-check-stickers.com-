@@ -20,13 +20,6 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .logo-top-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100px; /* حجم الشعار */
         }
         h1 {
             color: #2c3e50;
@@ -39,7 +32,7 @@
         }
         .input-container {
             position: relative;
-            width: 30%;
+            width: 50%;
             display: flex;
             align-items: center;
             border: 2px solid #3498db;
@@ -62,11 +55,14 @@
             border: none;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             border-radius: 0;
         }
         .input-container button:hover {
             background-color: #f39c12;
+        }
+        .input-container button:active {
+            transform: scale(0.95);
         }
         #result {
             margin-top: 20px;
@@ -83,6 +79,10 @@
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
         }
         .banner {
             width: 100%;
@@ -114,31 +114,43 @@
         .links div {
             margin: 10px;
         }
-        .image-above-input {
-            margin-bottom: 20px;
-        }
-        .image-above-input img {
-            width: 100%;
-            max-width: 300px; /* حجم الصورة */
-            border-radius: 10px;
+
+        /* Media Queries للأجهزة المحمولة */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* تصغير حجم العنوان */
+            }
+            p {
+                font-size: 1rem; /* تصغير حجم النص */
+            }
+            .input-container {
+                width: 80%; /* زيادة عرض الحاوية لتناسب الشاشات الصغيرة */
+            }
+            .input-container input {
+                font-size: 0.9rem; /* تصغير حجم الخط في حقل الإدخال */
+            }
+            .input-container button {
+                font-size: 0.9rem; /* تصغير حجم الخط في الزر */
+            }
+            #result {
+                font-size: 1rem; /* تصغير حجم الخط في النتيجة */
+            }
+            .links div {
+                margin: 5px; /* تقليل المسافة بين الروابط */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- شعار في الجهة اليسرى العليا -->
-        <img src="https://via.placeholder.com/100" alt="شعار الموقع" class="logo-top-left">
-
-        <!-- صورة فوق مكان إدخال رقم التحقق -->
-        <div class="image-above-input">
-            <img src="https://via.placeholder.com/300x100" alt="صورة فوق حقل الإدخال">
-        </div>
+        <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
         <h1>Yobazar - تحقق من ملصق الضمان</h1>
         <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
 
         <div class="input-container">
-            <input type="text" id="numberInput" placeholder="أدخل الرقم هنا">
+            <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
@@ -181,7 +193,7 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = ["123456789012", "11223344", "12345678", "654321", "87654321", "11111111", "22222222", "987654321098"];
+            const allowedCodes = ["123456789012", "11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
