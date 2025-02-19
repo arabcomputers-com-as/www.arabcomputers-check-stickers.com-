@@ -20,6 +20,7 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         h1 {
             color: #2c3e50;
@@ -83,7 +84,9 @@
         }
         .logo {
             width: 100px;
-            margin-bottom: 20px;
+            position: absolute; /* وضع الشعار بشكل مطلق */
+            top: 20px; /* المسافة من الأعلى */
+            left: 20px; /* المسافة من اليسار */
         }
         .banner {
             width: 100%;
@@ -118,7 +121,9 @@
         .breadcrumb {
             font-size: 1rem;
             color: #777;
-            margin-bottom: 20px;
+            position: absolute; /* وضع "Home / Check sticker" بشكل مطلق */
+            top: 120px; /* المسافة من الأعلى */
+            left: 20px; /* المسافة من اليسار */
         }
         .breadcrumb a {
             color: #3498db;
@@ -151,7 +156,14 @@
             .links div {
                 margin: 5px; /* تقليل المسافة بين الروابط */
             }
+            .logo {
+                width: 80px; /* تصغير حجم الشعار للأجهزة المحمولة */
+                top: 10px; /* تقليل المسافة من الأعلى */
+                left: 10px; /* تقليل المسافة من اليسار */
+            }
             .breadcrumb {
+                top: 90px; /* تعديل المسافة من الأعلى للأجهزة المحمولة */
+                left: 10px; /* تعديل المسافة من اليسار للأجهزة المحمولة */
                 font-size: 0.9rem; /* تصغير حجم الخط للشريط العلوي */
             }
         }
@@ -159,18 +171,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- شعار الموقع -->
+        <!-- شعار الموقع في أعلى الصفحة إلى اليسار -->
         <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
 
-        <!-- صورة البانر -->
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
-        <!-- قسم Home / Check sticker -->
+        <!-- "Home / Check sticker" تحت الشعار -->
         <div class="breadcrumb">
             <a href="#">Home</a> / <a href="#">Check sticker</a>
         </div>
 
-        <!-- العنوان الرئيسي -->
+        <!-- العنوان الرئيسي في وسط الصفحة -->
         <h1>Warranty sticker validation</h1>
 
         <!-- النص التوضيحي -->
@@ -178,6 +187,9 @@
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
+
+        <!-- صورة البانر -->
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
         <!-- حقل الإدخال والزر -->
         <div class="input-container">
