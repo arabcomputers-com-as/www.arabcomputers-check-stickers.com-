@@ -1,3 +1,11 @@
+const codesArray = Array.from(allowedCodes);
+const blob = new Blob([codesArray.join('\n')], { type: 'text/plain' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = 'codes.txt';
+a.click();
+URL.revokeObjectURL(url);
 <!DOCTYPE html>
 <html lang="ar">
 <head>
