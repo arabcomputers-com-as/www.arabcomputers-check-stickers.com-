@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <!-- ... (الأنماط نفسها) ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warranty sticker validation</title>
     <style>
-        /* أنماط إضافية لزر التنزيل */
-        .download-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
+        /* الأنماط الاصلية مع تعديل الخط */
+        body {
+            font-family: 'Arial', sans-serif; /* تأكيد استخدام Arial */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
+        
+        /* إخفاء زر التنزيل */
+        .download-btn {
+            display: none !important;
+        }
+
+        /* ... (ابق جميع الأنماط الأخرى كما هي) ... */
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- ... (نفس الهيكل السابق) ... -->
-
-        <!-- زر تنزيل الرموز -->
-        <button class="download-btn" onclick="downloadCodes()">
-            تنزيل جميع الرموز ⬇️
-        </button>
-
-        <!-- ... (بقية العناصر) ... -->
+        <!-- ... (نفس الهيكل السابق بدون زر التنزيل) ... -->
     </div>
 
     <script>
-        // توليد 30 ألف رمز فريد
-        const generateRandomCode = (length = 12) => {
+        // توليد 30 ألف رمز (نسخة محسنة)
+        const generateRandomCode = () => {
             const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            return Array.from({length}, () => 
+            return Array.from({length: 12}, (_, i) => 
                 chars[Math.floor(Math.random() * chars.length)]
             ).join('');
         };
 
         const allowedCodes = new Set();
-        const totalCodes = 30000;
-
-        // توليد الرموز
-        while(allowedCodes.size < totalCodes) {
+        while(allowedCodes.size < 30000) {
             allowedCodes.add(generateRandomCode());
         }
 
         // دالة التحقق المعدلة
         function validateForm(event) {
             event.preventDefault();
-            const input = document.getElementById("numberInput").value.toUpperCase();
+            const input = document.getElementById("numberInput").value.toUpperCase().trim();
             const resultElement = document.getElementById("result");
             
+            // إعادة تعيين النتائج
             resultElement.className = '';
             resultElement.textContent = '';
 
             const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
 
             if(usedCodes.includes(input)) {
-                resultElement.textContent = "❌ تم استخدام هذا الرمز مسبقاً!";
+                resultElement.textContent = "❌ تم الاستخدام مسبقاً";
                 resultElement.className = 'error';
                 return;
             }
@@ -64,33 +63,17 @@
             if(allowedCodes.has(input)) {
                 usedCodes.push(input);
                 localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                resultElement.textContent = "✅ الرمز صحيح!";
+                resultElement.textContent = "✅ رمز صحيح";
                 resultElement.className = 'success';
             } else {
-                resultElement.textContent = "❌ الرمز غير صحيح!";
+                resultElement.textContent = "❌ رمز غير صحيح";
                 resultElement.className = 'error';
             }
         }
 
-        // دالة تنزيل الرموز
+        // دالة التنزيل (موجودة ولكن غير مستخدمة في الواجهة)
         function downloadCodes() {
-            const codes = Array.from(allowedCodes);
-            const blob = new Blob([codes.join('\n')], {type: 'text/plain'});
-            const url = URL.createObjectURL(blob);
-            
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'verification_codes.txt';
-            document.body.appendChild(a);
-            a.click();
-            
-            URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-        }
-
-        // دالة الضغط على Enter
-        function handleKeyPress(event) {
-            if(event.key === "Enter") validateForm(event);
+            // ... (نفس الكود السابق) ...
         }
     </script>
 </body>
