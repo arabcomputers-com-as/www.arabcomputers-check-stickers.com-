@@ -27,7 +27,7 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             font-weight: bold;
-            margin-top: 60px;
+            margin-top: 60px; /* إضافة مسافة سطرين قبل العنوان */
         }
         p {
             font-size: 1.2rem;
@@ -63,7 +63,7 @@
             border-radius: 0;
         }
         .input-container button:hover {
-            background-color: #996515; /* ذهبي غامق داكن عند التمرير */
+            background-color: #A0522D; /* لون بني داكن عند التمرير */
         }
         .input-container button:active {
             transform: scale(0.95);
@@ -124,7 +124,7 @@
             font-size: 1rem;
             color: #777;
             position: absolute;
-            top: 140px;
+            top: 140px; /* مسافة سطرين تحت الشعار */
             left: 20px;
         }
         .breadcrumb a {
@@ -134,12 +134,8 @@
         .breadcrumb a:hover {
             text-decoration: underline;
         }
-        .logo-bottom-left {
-            width: 100px;
-            margin: 20px 0 0 20px;
-            float: left;
-        }
 
+        /* Media Queries للأجهزة المحمولة */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -169,10 +165,60 @@
                 left: 10px;
             }
             .breadcrumb {
-                top: 110px;
+                top: 110px; /* تعديل المسافة للأجهزة المحمولة */
                 left: 10px;
                 font-size: 0.9rem;
             }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- شعار الموقع في أعلى الصفحة إلى اليسار -->
+        <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+
+
+        <!-- العنوان الرئيسي في وسط الصفحة -->
+        <h1>Warranty sticker validation</h1>
+
+        <!-- النص التوضيحي -->
+        <p>
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <!-- صورة البانر -->
+      <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
+
+         <!-- النص التوضيحي -->
+        <p>
+             
+Enter the number shown on the sticker in this box:
+أدخل الرقم الموجود على الملصق هنا
+        </p>
+
+        
+        <!-- حقل الإدخال والزر -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
+            <button type="submit" onclick="validateForm(event)">Check</button>
+        </div>
+
+        <!-- نتيجة التحقق -->
+        <div id="result"></div>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <!-- ... (ابقى محتوى head كما هو) ... -->
+    <style>
+        /* أضف هذا النمط الجديد للشعار في الأسفل */
+        .logo-bottom-left {
+            width: 100px;
+            margin: 20px 0 0 20px;
+            float: left;
+        }
+
+        @media (max-width: 768px) {
             .logo-bottom-left {
                 width: 80px;
                 margin-left: 10px;
@@ -182,34 +228,23 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
-        <div class="breadcrumb">
+        <!-- ... (ابقى الشعار العلوي و breadcrumb كما هو) ... -->
 
-        <h1>Warranty sticker validation</h1>
-
-        <p>
-            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
-            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
-        </p>
-
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
-        <p>
-            Enter the number shown on the sticker in this box:
-            أدخل الرقم الموجود على الملصق هنا
-        </p>
-
-        <div class="input-container">
-            <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
-            <button type="submit" onclick="validateForm(event)">Check</button>
-        </div>
-
+        <!-- نتيجة التحقق -->
         <div id="result"></div>
 
+        <!-- أضف الشعار الجديد تحت التحقق في الجهة اليسرى -->
         <div style="overflow: hidden;">
             <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo-bottom-left">
         </div>
 
+        <!-- ... (ابقى بقية المحتوى كما هو) ... -->
+    </div>
+
+    <!-- ... (ابقى السكريبت كما هو) ... -->
+</body>
+</html>
+        <!-- الروابط -->
         <div class="links">
             <div>
                 <h3>روابط مفيدة</h3>
@@ -236,6 +271,7 @@
             </div>
         </div>
 
+        <!-- الفوتر -->
         <div class="footer">
             <p>للصيانة: <a href="#">زيارة AC-Care</a></p>
             <p>للمبيعات الفردية: <a href="#">نقاط البيع</a></p>
