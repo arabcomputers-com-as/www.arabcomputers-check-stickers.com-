@@ -2,37 +2,108 @@
 <html lang="ar">
 <head>
     <!-- ... (ابقى محتوى head كما هو) ... -->
-    <style>
-        /* أضف هذا النمط الجديد للشعار في الأسفل */
-        .logo-bottom-left {
-            width: 100px;
-            margin: 20px 0 0 20px;
-            float: left;
-        }
-
-        @media (max-width: 768px) {
-            .logo-bottom-left {
-                width: 80px;
-                margin-left: 10px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- ... (ابقى الشعار العلوي و breadcrumb كما هو) ... -->
+        <!-- شعار الموقع في أعلى الصفحة إلى اليسار -->
+        <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+
+        <!-- "Home / Check sticker" تحت الشعار -->
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <a href="#">Check sticker</a>
+        </div>
+
+        <!-- العنوان الرئيسي تحت "Home / Check sticker" -->
+        <h1>Warranty sticker validation</h1>
+
+        <!-- النص التوضيحي -->
+        <p>
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <!-- صورة البانر -->
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
+
+        <!-- النص التوضيحي -->
+        <p>
+            Enter the number shown on the sticker in this box:
+            أدخل الرقم الموجود على الملصق هنا
+        </p>
+
+        <!-- حقل الإدخال والزر -->
+        <div class="input-container">
+            <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
+            <button type="submit" onclick="validateForm(event)">Check</button>
+        </div>
 
         <!-- نتيجة التحقق -->
         <div id="result"></div>
 
-        <!-- أضف الشعار الجديد تحت التحقق في الجهة اليسرى -->
-        <div style="overflow: hidden;">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo-bottom-left">
+        <!-- الروابط -->
+        <div class="links">
+            <div>
+                <h3>روابط مفيدة</h3>
+                <p><a href="#">الصفحة الرئيسية</a></p>
+                <p><a href="#">نقاط البيع</a></p>
+                <p><a href="#">اتصل بنا</a></p>
+                <p><a href="#">DPP</a></p>
+            </div>
+            <div>
+                <h3>المنتجات</h3>
+                <p><a href="#">iPhone</a></p>
+                <p><a href="#">Mac</a></p>
+                <p><a href="#">iPad</a></p>
+                <p><a href="#">iPod</a></p>
+                <p><a href="#">Apple TV</a></p>
+                <p><a href="#">Apple Watch</a></p>
+            </div>
+            <div>
+                <h3>معلومات</h3>
+                <p><a href="#">تعلم كيف</a></p>
+                <p><a href="#">مزودو الخدمة</a></p>
+                <p><a href="#">الشروط والأحكام</a></p>
+                <p><a href="#">اتصل بنا</a></p>
+            </div>
         </div>
 
-        <!-- ... (ابقى بقية المحتوى كما هو) ... -->
+        <!-- الفوتر -->
+        <div class="footer">
+            <p>للصيانة: <a href="#">زيارة AC-Care</a></p>
+            <p>للمبيعات الفردية: <a href="#">نقاط البيع</a></p>
+            <p>للمبيعات المؤسسية أو القنوات: <a href="mailto:sales@arabcomputers.com.sa">sales@arabcomputers.com.sa</a></p>
+            <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
+        </div>
     </div>
 
-    <!-- ... (ابقى السكريبت كما هو) ... -->
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const allowedCodes = ["123456789012", "11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            
+            resultElement.className = '';
+            resultElement.textContent = '';
+
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            if (usedCodes.includes(numberInput)) {
+                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                resultElement.className = 'error';
+                return;
+            }
+
+            if (allowedCodes.includes(numberInput)) {
+                usedCodes.push(numberInput);
+                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                resultElement.className = 'success';
+            } else {
+                resultElement.textContent = "❌ الرقم غير صحيح!";
+                resultElement.className = 'error';
+            }
+        }
+    </script>
 </body>
 </html>
