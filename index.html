@@ -240,7 +240,7 @@ Enter the number shown on the sticker in this box:
             const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
 
             if (usedCodes.includes(numberInput)) {
-                resultElement.textContent = "❌ هذا الرقم تم استخدامه مسبقًا!";
+                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
                 resultElement.className = 'error';
                 return;
             }
@@ -248,7 +248,7 @@ Enter the number shown on the sticker in this box:
             if (allowedCodes.includes(numberInput)) {
                 usedCodes.push(numberInput);
                 localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                resultElement.textContent = "✅ الرقم صحيح!";
+                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                 resultElement.className = 'success';
             } else {
                 resultElement.textContent = "❌ الرقم غير صحيح!";
