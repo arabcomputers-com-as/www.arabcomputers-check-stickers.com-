@@ -25,6 +25,7 @@
             color: #2c3e50;
             font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: bold; /* جعل العنوان عريضًا */
         }
         p {
             font-size: 1.2rem;
@@ -114,6 +115,18 @@
         .links div {
             margin: 10px;
         }
+        .breadcrumb {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
 
         /* Media Queries للأجهزة المحمولة */
         @media (max-width: 768px) {
@@ -138,27 +151,44 @@
             .links div {
                 margin: 5px; /* تقليل المسافة بين الروابط */
             }
+            .breadcrumb {
+                font-size: 0.9rem; /* تصغير حجم الخط للشريط العلوي */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- شعار الموقع -->
         <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
 
-        <h1>  </h1>
-        <p> Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
-تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف </p>
+        <!-- صورة البانر -->
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
+        <!-- قسم Home / Check sticker -->
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <a href="#">Check sticker</a>
+        </div>
+
+        <!-- العنوان الرئيسي -->
+        <h1>Warranty sticker validation</h1>
+
+        <!-- النص التوضيحي -->
+        <p>
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <!-- حقل الإدخال والزر -->
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
+        <!-- نتيجة التحقق -->
         <div id="result"></div>
 
-        <!-- نقل صورة البانر إلى هنا -->
-        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-
+        <!-- الروابط -->
         <div class="links">
             <div>
                 <h3>روابط مفيدة</h3>
@@ -185,6 +215,7 @@
             </div>
         </div>
 
+        <!-- الفوتر -->
         <div class="footer">
             <p>للصيانة: <a href="#">زيارة AC-Care</a></p>
             <p>للمبيعات الفردية: <a href="#">نقاط البيع</a></p>
