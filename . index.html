@@ -212,8 +212,42 @@ Enter the number shown on the sticker in this box:
         <div id="result"></div>
 <!DOCTYPE html>
 <html lang="ar">
+<head>
+    <!-- ... (ابقى محتوى head كما هو) ... -->
+    <style>
+        /* أضف هذا النمط الجديد للشعار في الأسفل */
+        .logo-bottom-left {
+            width: 100px;
+            margin: 20px 0 0 20px;
+            float: left;
+        }
 
-        
+        @media (max-width: 768px) {
+            .logo-bottom-left {
+                width: 80px;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ... (ابقى الشعار العلوي و breadcrumb كما هو) ... -->
+
+        <!-- نتيجة التحقق -->
+        <div id="result"></div>
+
+        <!-- أضف الشعار الجديد تحت التحقق في الجهة اليسرى -->
+        <div style="overflow: hidden;">
+            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo-bottom-left">
+        </div>
+
+        <!-- ... (ابقى بقية المحتوى كما هو) ... -->
+    </div>
+
+    <!-- ... (ابقى السكريبت كما هو) ... -->
+</body>
+</html>
         <!-- الروابط -->
         <div class="links">
             <div>
@@ -279,41 +313,5 @@ Enter the number shown on the sticker in this box:
             }
         }
     </script>
-</body>
-</html>
-<head>
-    <!-- ... (ابقى محتوى head كما هو) ... -->
-    <style>
-        /* أضف هذا النمط الجديد للشعار في الأسفل */
-        .logo-bottom-left {
-            width: 100px;
-            margin: 20px 0 0 20px;
-            float: left;
-        }
-
-        @media (max-width: 768px) {
-            .logo-bottom-left {
-                width: 80px;
-                margin-left: 10px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <!-- ... (ابقى الشعار العلوي و breadcrumb كما هو) ... -->
-
-        <!-- نتيجة التحقق -->
-        <div id="result"></div>
-
-        <!-- أضف الشعار الجديد تحت التحقق في الجهة اليسرى -->
-        <div style="overflow: hidden;">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo-bottom-left">
-        </div>
-
-        <!-- ... (ابقى بقية المحتوى كما هو) ... -->
-    </div>
-
-    <!-- ... (ابقى السكريبت كما هو) ... -->
 </body>
 </html>
