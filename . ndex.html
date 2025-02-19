@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yobazar - تحقق من ملصق الضمان</title>
+    <title>Warranty sticker validation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,15 +20,19 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         h1 {
             color: #2c3e50;
             font-size: 2.5rem;
             margin-bottom: 20px;
+            font-weight: bold; /* جعل العنوان عريضًا */
+            margin-top: 60px; /* إضافة هامش علوي لتحريك النص لأسفل */
         }
         p {
             font-size: 1.2rem;
             color: #555;
+            margin-top: 10px; /* إضافة هامش علوي للنص التوضيحي */
         }
         .input-container {
             position: relative;
@@ -82,7 +86,9 @@
         }
         .logo {
             width: 100px;
-            margin-bottom: 20px;
+            position: absolute; /* وضع الشعار بشكل مطلق */
+            top: 20px; /* المسافة من الأعلى */
+            left: 20px; /* المسافة من اليسار */
         }
         .banner {
             width: 100%;
@@ -114,11 +120,26 @@
         .links div {
             margin: 10px;
         }
+        .breadcrumb {
+            font-size: 1rem;
+            color: #777;
+            position: absolute; /* وضع "Home / Check sticker" بشكل مطلق */
+            top: 120px; /* المسافة من الأعلى */
+            left: 20px; /* المسافة من اليسار */
+        }
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
 
         /* Media Queries للأجهزة المحمولة */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem; /* تصغير حجم العنوان */
+                margin-top: 40px; /* تعديل الهامش العلوي للأجهزة المحمولة */
             }
             p {
                 font-size: 1rem; /* تصغير حجم النص */
@@ -138,24 +159,51 @@
             .links div {
                 margin: 5px; /* تقليل المسافة بين الروابط */
             }
+            .logo {
+                width: 80px; /* تصغير حجم الشعار للأجهزة المحمولة */
+                top: 10px; /* تقليل المسافة من الأعلى */
+                left: 10px; /* تقليل المسافة من اليسار */
+            }
+            .breadcrumb {
+                top: 90px; /* تعديل المسافة من الأعلى للأجهزة المحمولة */
+                left: 10px; /* تعديل المسافة من اليسار للأجهزة المحمولة */
+                font-size: 0.9rem; /* تصغير حجم الخط للشريط العلوي */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- شعار الموقع في أعلى الصفحة إلى اليسار -->
         <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+
+        <!-- "Home / Check sticker" تحت الشعار -->
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <a href="#">Check sticker</a>
+        </div>
+
+        <!-- العنوان الرئيسي في وسط الصفحة -->
+        <h1>Warranty sticker validation</h1>
+
+        <!-- النص التوضيحي -->
+        <p>
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
+
+        <!-- صورة البانر -->
         <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
-        <h1>Yobazar - تحقق من ملصق الضمان</h1>
-        <p>تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف</p>
-
+        <!-- حقل الإدخال والزر -->
         <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX" onkeypress="handleKeyPress(event)">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
 
+        <!-- نتيجة التحقق -->
         <div id="result"></div>
 
+        <!-- الروابط -->
         <div class="links">
             <div>
                 <h3>روابط مفيدة</h3>
@@ -182,6 +230,7 @@
             </div>
         </div>
 
+        <!-- الفوتر -->
         <div class="footer">
             <p>للصيانة: <a href="#">زيارة AC-Care</a></p>
             <p>للمبيعات الفردية: <a href="#">نقاط البيع</a></p>
