@@ -315,3 +315,50 @@ Enter the number shown on the sticker in this box:
     </script>
 </body>
 </html>
+<script>
+    function generateRandomCode(length = 12) {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+
+    // إنشاء مجموعة من الرموز الفريدة
+    const allowedCodes = new Set(["123456789012", "DH5P3EF8N"]); // الرموز الافتراضية
+    const totalCodes = 30000;
+
+    // توليد الرموز حتى الوصول للعدد المطلوب
+    while (allowedCodes.size < totalCodes + 2) { // +2 للرموز الافتراضية الموجودة
+        const newCode = generateRandomCode();
+        allowedCodes.add(newCode);
+    }
+
+    function validateForm(event) {
+        event.preventDefault();
+        const numberInput = document.getElementById("numberInput").value;
+        const resultElement = document.getElementById("result");
+        
+        resultElement.className = '';
+        resultElement.textContent = '';
+
+        const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+        if (usedCodes.includes(numberInput)) {
+            resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+            resultElement.className = 'error';
+            return;
+        }
+
+        if (allowedCodes.has(numberInput)) {
+            usedCodes.push(numberInput);
+            localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+            resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+            resultElement.className = 'success';
+        } else {
+            resultElement.textContent = "❌ الرقم غير صحيح!";
+            resultElement.className = 'error';
+        }
+    }
+</script>
