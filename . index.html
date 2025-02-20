@@ -55,15 +55,20 @@
 
         h1 {
             color: #2c3e50;
-            font-size: 1.8rem;
-            margin: 0 0 20px 0;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin: 30px 0;
+            text-transform: uppercase;
         }
 
-        p {
-            font-size: 1rem;
-            color: #555;
-            margin: 10px 0;
+        .main-description {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
         }
 
         .banner {
@@ -72,6 +77,13 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 20px;
+        }
+
+        .input-instruction {
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 25px 0;
         }
 
         .input-container {
@@ -171,6 +183,16 @@
                 font-size: 14px;
             }
 
+            h1 {
+                font-size: 2rem !important;
+                margin: 20px 0;
+            }
+
+            .main-description {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
             .logo {
                 width: 80px;
             }
@@ -178,11 +200,6 @@
             .breadcrumb {
                 font-size: 0.8rem;
                 margin-bottom: 20px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-                margin-bottom: 15px;
             }
 
             .input-container {
@@ -200,6 +217,10 @@
                 font-size: 13px;
             }
 
+            h1 {
+                font-size: 1.8rem !important;
+            }
+
             .input-container button {
                 padding: 10px 15px;
             }
@@ -213,17 +234,18 @@
             <div class="breadcrumb">
                 <a href="#">Home</a> / <a href="#">Check sticker</a>
             </div>
-            
-            <h1>Warranty sticker validation</h1>
-            <p>
-                Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
-                تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
-            </p>
         </div>
+
+        <h1>Warranty sticker validation</h1>
+        
+        <p class="main-description">
+            Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
+            تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
+        </p>
 
         <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
 
-        <p>
+        <p class="input-instruction">
             Enter the number shown on the sticker in this box:<br>
             أدخل الرقم الموجود على الملصق هنا
         </p>
