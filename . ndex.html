@@ -287,14 +287,8 @@
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
-</div>
-
-
-
-
-
-
-    </div>
+<div id="result"></div>
+         
     </div>
         <div id="result"></div>
     
@@ -368,8 +362,8 @@
                 resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
                 resultElement.className = 'success';
             } else {
-                resultElement.textContent = " ادخل الرمز في المربع!";
-                resultElement.className = '';
+                resultElement.textContent = " أدخل الرمز في المربع!";
+                resultElement.className = 'error';
             }
         }
     </script>
