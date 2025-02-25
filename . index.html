@@ -43,9 +43,7 @@
             color: #777;
             margin: 10px 0 15px 0;
         }
-.breadcrumb a {
-    color: #000 !important;
-}
+
         .breadcrumb a {
             color: #3498db;
             text-decoration: none;
@@ -281,11 +279,10 @@
         <p class="input-instruction">
             <br>
             Enter the number shown on the sticker in this box
-            
-            أدخل الرقم الظاهر على الملصق في هذا المربع   
-        </p>
-
-        <div class="input-container">
+       </p>
+        <p class="main-description">
+            أدخل الرقم الموجود على الملصق هنا    
+      <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
@@ -343,7 +340,7 @@
     <script>
         function validateForm(event) {
             event.preventDefault();
-            const allowedCodes = ["123456789012", "2KKDX1RNX0", 
+            const allowedCodes = ["2KKDX1RNX0", 
 "3ANMH9TBMT", 
 "3ERXX68J01", 
 "6ISML75P4A", 
@@ -10342,7 +10339,7 @@
 "6RVQH10OWM", 
 "3TPNX1PF2Q", 
 "8TDLW12RNJ", 
-"3QFD18EA78","11223344", "12345678", "DH5P3EF8N", "87654321", "11111111", "22222222", "987654321098"];
+"3QFD18EA78"];
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
