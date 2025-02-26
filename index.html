@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,17 +45,18 @@
         }
 
         .breadcrumb a {
-            color: #3498db;
+            color: #000 !important;
             text-decoration: none;
         }
 
         .breadcrumb a:hover {
+            color: #333 !important;
             text-decoration: underline;
         }
 
-        h1 {
+        h2 {
             color: #2c3e50;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
@@ -64,8 +65,8 @@
 
         .main-description {
             text-align: center;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-weight: normal;
+            font-size: 1rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 30px auto;
@@ -81,57 +82,58 @@
 
         .input-instruction {
             text-align: center;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: normal;
+            font-size: 0.9rem;
             margin: 15px 0;
         }
 
         .input-container {
-            width: 70%;
-            max-width: 400px;
+            width: 45%;
+            max-width: 300px;
             display: flex;
             align-items: center;
-            border: 2px solid #3498db;
+            border: 2px solid #cccccc;
             border-radius: 25px 0 0 25px;
             overflow: hidden;
             margin: 10px auto;
-            transform: scale(0.95);
+            height: 40px;
         }
 
         .input-container input {
             flex: 1;
-            padding: 12px;
+            padding: 8px 12px;
             border: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             outline: none;
             border-radius: 25px 0 0 25px;
+            text-align: left;
+            height: 100%;
         }
 
         .input-container button {
-            padding: 12px 20px;
-            background-color: #B8860B;
+            padding: 0 20px;
+            background-color: #a8822b;
             color: white;
             border: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
+            height: 100%;
             border-radius: 0;
+            min-width: 80px;
         }
 
-        .input-container button:hover {
-            background-color: #996515;
-        }
-
-        .input-container button:active {
-            transform: scale(0.95);
+        .input-container button.pressed {
+            background-color: white !important;
+            color: #a8822b !important;
         }
 
         #result {
-            margin-top: 15px;
-            margin-bottom: 40px; /* زيادة المسافة هنا */
+            margin: 20px auto;
             padding: 15px;
             border-radius: 10px;
             font-size: 1.1rem;
+            max-width: 350px;
         }
 
         .success {
@@ -146,41 +148,6 @@
             border: 1px solid #f5c6cb;
         }
 
-        .logo-bottom-left {
-            width: 100px;
-            margin: 40px 0 0 20px; /* زيادة المسافة هنا */
-            float: left;
-        }
-
-        .links {
-            display: flex;
-            justify-content: space-between;
-            text-align: left;
-            margin: 25px 0;
-            flex-wrap: wrap;
-        }
-
-        .left-section {
-            display: flex;
-            gap: 25px;
-        }
-
-        .right-section {
-            border-left: 2px solid #eee;
-            padding-left: 25px;
-        }
-
-        .links h3 {
-            color: #2c3e50;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        .links p {
-            margin: 4px 0;
-            line-height: 1.4;
-        }
-
         .footer {
             margin-top: 25px;
             padding: 20px;
@@ -190,68 +157,66 @@
             text-align: left;
         }
 
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .right-section {
+            flex: 1;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .right-section h2 {
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        .right-section p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        /* توسيط النصوص المحددة وجعلها عريضة وسوداء */
+        .center-text {
+            text-align: center !important;
+            font-weight: bold !important; /* جعل النص عريضًا */
+            color: black !important; /* تغيير لون النص إلى أسود */
+        }
+
+        /* قسم DPP أسفل Useful Links */
+        .dpp-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
-            :root {
-                font-size: 14px;
-            }
-
-            h1 {
-                font-size: 1.6rem !important;
-                margin: 15px 0;
-            }
-
-            .main-description {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-
-            .logo {
-                width: 80px;
-            }
-
-            .breadcrumb {
-                font-size: 0.8rem;
-                margin-bottom: 15px;
-            }
-
             .input-container {
-                width: 90%;
-                transform: none;
+                width: 70%;
             }
-
-            .logo-bottom-left {
-                width: 80px;
-                margin-left: 10px;
-                margin-top: 30px !important; /* تكييف للهواتف */
+            
+            .input-container button {
+                padding: 12px 20px;
             }
 
             .links {
                 flex-direction: column;
-                gap: 20px;
-            }
-
-            .left-section {
-                flex-direction: column;
-                gap: 15px;
             }
 
             .right-section {
-                border-left: none;
-                padding-left: 0;
-                border-top: 2px solid #eee;
-                padding-top: 15px;
-            }
-
-            #result {
-                margin-bottom: 30px; /* تكييف للهواتف */
+                margin-left: 0;
+                margin-top: 20px;
             }
         }
 
         @media (max-width: 480px) {
-            :root {
-                font-size: 13px;
+            .input-container {
+                width: 90%;
             }
-
+            
             .input-container button {
                 padding: 10px 15px;
             }
@@ -261,7 +226,7 @@
 <body>
     <div class="container">
         <div class="header-content">
-            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="شعار الموقع" class="logo">
+            <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Website Logo" class="logo">
             <div class="breadcrumb">
                 <a href="#">Home</a> / <a href="#">Check sticker</a>
             </div>
@@ -273,68 +238,78 @@
             Check if the warranty sticker on your product is genuine and protect yourself from fake sticker.<br>
             تأكد إذا كان ملصق الضمان الموجود على منتجك هو ملصق أصلي أو مزيف
         </p>
- <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="بانر الموقع" class="banner">
-<p class="input-instruction">
-            Enter the number shown on the sticker in this box
-            أدخل الرقم الموجود على الملصق هنا    
-      <div class="input-container">
+
+        <img src="https://i.postimg.cc/05tBw257/undefined-Imgur.png" alt="Website Banner" class="banner">
+
+        <p class="input-instruction">
+            Enter the number shown on the sticker in this box<br>
+            أدخل الرقم الموجود على الملصق هنا   
+        </p>
+
+        <div class="input-container">
             <input type="text" id="numberInput" placeholder="XXXXXX">
             <button type="submit" onclick="validateForm(event)">Check</button>
         </div>
-<div id="result"></div>
-         
-    </div>
+
         <div id="result"></div>
+    </div>
+<div id="result"></div>
     
     <div class="links">
             <div class="left-section">
                 <div>
             <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="بانر الموقع" class="banner">
-        <div class="links"> 
-
-            <div class="right-section">
-                    <h2>روابط مفيدة</h2>
-                    <p><a href="#">بيت</a></p>
-                    <p><a href="#">نقطة البيع</a></p>
-                    <p><a href="#">اتصل بنا</a></p>
-                    <p><a href="#">النيابة العامة</a></p>
-                </div>
-                
-                <div>
-                    <h2>منتجات</h2>
-                    <p><a href="#">آيفون</a></p>
-                    <p><a href="#">ماك</a></p>
-                    <p><a href="#">آيباد</a></p>
-                    <p><a href="#">آيبود</a></p>
-                    <p><a href="#">تلفزيون آبل</a></p>
-                    <p><a href="#">ساعة ابل</a></p>
-                </div>
-                
-                <div>
-                    <h2>معلومة</h2>
-                    <p><a href="##">تعلم كيف</a></p>
-                    <p><a href="##">مقدمي الخدمة</a></p>
-                    <p><a href="##">الشروط والأحكام</a></p>
-                    <p><a href="##">اتصل بنا</a></p>
-                </div>
-            </div>
-
-            <div class="right-section">
-                <h2>الدعم والمبيعات</h2>
-                <p><a href="#">للصيانة: زيارة AC-Care</a></p>
-                <p><a href="#">للمبيعات الفردية: نقطة البيع</a></p>
-                <p><a href="mailto:sales@arabcomputers.com.sa">للمبيعات المؤسسية: sales@arabcomputers.com.sa</a></p>
-            </div>
+        <div class="links">
+            
+        <div class="right-section">
+            <h2>Useful Links</h2>
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Point Of Sales</a></p>
+            <p><a href="#">Contact Us</a></p>
         </div>
-
-        <div class="footer">
-            <p>© Arab Computers 2022. جميع الحقوق محفوظة.</p>
+            <div class="dpp-section">
+            <p class="center-text">DPP</p> <!-- توسيط DPP أسفل Useful Links -->
+        </div>  
+        <div class="right-section">
+            <div class="dpp-section">
+            <p class="center-text">iPod</p> <!-- توسيط iPod أسفل Useful Links -->
+            <p class="center-text">Apple TV</p> <!-- توسيط Apple TV أسفل Useful Links -->
+            <p class="center-text">Apple Watch TV </p> <!-- توسيط Apple Watch TV  أسفل Useful Links -->
         </div>
+            <h2>Products</h2>
+            <p><a href="#">iPhone</a></p>
+            <p><a href="#">Mac</a></p>
+            <p><a href="#">iPad</a></p>
+        </div>
+        
+        <div class="right-section">
+            
+        <div class="dpp-section">
+            <p class="center-text">Terms and Conditions</p> <!-- توسيط Terms and Conditions أسفل Useful Links -->
+        </div> 
+            <h2>Information</h2>
+            <p><a href="##">Learn How</a></p>
+            <p><a href="##">Service Providers</a></p>
+            <p><a href="##">Contact Us</a></p>
+        </div>
+       
+
+        <div class="right-section">
+            <h2>Support and Sales</h2>
+            <p><a href="#">For Maintenance: Visit AC-Care</a></p>
+            <p><a href="#">For Individual Sales: Point of Sales</a></p>
+            <p><a href="mailto:sales@arabcomputers.com.sa">For Corporate or Channels Sales: sales@arabcomputers.com.sa</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© Arab Computers 2022. All rights reserved.</p>
     </div>
 
     <script>
         function validateForm(event) {
             event.preventDefault();
+            const button = event.target;
             const allowedCodes = ["2KKDX1RNX0", 
 "3ANMH9TBMT", 
 "3ERXX68J01", 
@@ -10334,30 +10309,34 @@
 "6RVQH10OWM", 
 "3TPNX1PF2Q", 
 "8TDLW12RNJ", 
-"3QFD18EA78"];
+"3QFD18EA78" ];
+            
             const numberInput = document.getElementById("numberInput").value;
             const resultElement = document.getElementById("result");
             
+            button.classList.add('pressed');
+
             resultElement.className = '';
             resultElement.textContent = '';
 
             const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
 
-            if (usedCodes.includes(numberInput)) {
-                resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
-                resultElement.className = 'error';
-                return;
-            }
-
-            if (allowedCodes.includes(numberInput)) {
-                usedCodes.push(numberInput);
-                localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
-                resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
-                resultElement.className = 'success';
-            } else {
-                resultElement.textContent = " أدخل الرمز في المربع!";
-                resultElement.className = 'error';
-            }
+            setTimeout(() => {
+                if (usedCodes.includes(numberInput)) {
+                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.className = 'error';
+                } else if (allowedCodes.includes(numberInput)) {
+                    usedCodes.push(numberInput);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                    resultElement.className = 'success';
+                } else {
+                    resultElement.textContent = " Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.className = 'error';
+                }
+                
+                button.classList.remove('pressed');
+            }, 500);
         }
     </script>
 </body>
