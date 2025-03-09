@@ -32,11 +32,16 @@
             position: sticky; /* جعل الشعار يلتصق عند التمرير */
             top: 0;
             background-color: #fff; /* لون الخلفية */
-            z-index: 1000; /* التأكد من ظهور الشعار فوق العناصر الأخرى */
+            z-index: 1000; /* التأكد من ظهور الشعار فوق ا��عناصر الأخرى */
             padding: 10px 0; /* إضافة مساحة حول الشعار */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل */
             text-align: left;
             margin-bottom: 30px;
+            transition: opacity 0.3s ease; /* تأثير الظهور والاختفاء */
+        }
+
+        .header-content.hide {
+            opacity: 0; /* إخفاء الشعار عند التمرير لأسفل */
         }
 
         .logo {
@@ -194,7 +199,13 @@
         }
 
         .bottom-nav .nav-icon svg {
-            fill: white; /* جعل لون أيقونة الهوم أبيض */
+            fill: none; /* إزالة التعبئة */
+            stroke: #999; /* جعل الخط رمادي فاتح */
+            stroke-width: 1; /* جعل الخط خفيفًا */
+        }
+
+        .bottom-nav .nav-icon:hover svg {
+            stroke: #a8822b; /* تغيير لون الخط عند التحويم */
         }
 
         .nav-icon {
@@ -218,6 +229,9 @@
         .right-section p {
             margin: 10px 0;
             font-size: 0.8rem; /* تقليل حجم الخط */
+            font-weight: 500; /* جعل الخط أنيق */
+            line-height: 1.6; /* تحسين تباعد الأسطر */
+            letter-spacing: 0.5px; /* تحسين التباعد بين الحروف */
         }
 
         .center-text {
@@ -331,7 +345,8 @@
             </svg>
         </a>
     </div>
-<div class="links">
+
+    <div class="links">
         <div class="left-section">
             <img src="https://i.postimg.cc/SKC7Wqhm/Screenshot-com-android-chrome.png" alt="Website Banner" class="banner">
         </div>
