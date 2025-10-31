@@ -13,12 +13,12 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
-            background-color: #f4f4f9;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
-            padding-top: 20px;
+            padding: 20px 0;
         }
 
         /* Main Container */
@@ -27,7 +27,8 @@
             margin: 0 auto;
             padding: 30px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
             text-align: left;
         }
 
@@ -36,9 +37,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 15px;
         }
 
         .logo-link {
@@ -47,7 +48,7 @@
         }
 
         .logo {
-            width: 150px;
+            width: 180px;
             height: auto;
         }
 
@@ -64,15 +65,15 @@
         }
 
         .breadcrumb a:hover {
-            color: #000;
+            color: #a8822b;
             text-decoration: underline;
         }
 
         /* Main Heading */
         h2 {
-            color: #000;
-            font-size: 2rem;
-            font-weight: bold;
+            color: #222;
+            font-size: 2.2rem;
+            font-weight: 700;
             text-align: center;
             margin: 30px 0;
             letter-spacing: 0.5px;
@@ -82,15 +83,15 @@
         .warning-section {
             text-align: center;
             margin: 30px auto;
-            padding: 20px;
-            max-width: 700px;
+            padding: 25px;
+            max-width: 750px;
             border: 2px solid #ff0000;
-            border-radius: 8px;
+            border-radius: 10px;
             background-color: #fff5f5;
         }
 
         .warning-image {
-            width: 250px;
+            width: 220px;
             height: auto;
             margin-bottom: 20px;
         }
@@ -98,10 +99,11 @@
         .warning-text-arabic {
             color: #ff0000;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             direction: rtl;
             text-align: center;
+            margin-bottom: 15px;
         }
 
         .warning-url {
@@ -109,17 +111,18 @@
             text-decoration: none;
             font-weight: bold;
             display: block;
-            margin: 5px 0 15px 0;
-            font-size: 1.1rem;
+            margin: 10px 0 20px 0;
+            font-size: 1.2rem;
             background-color: #fff;
-            padding: 5px;
-            border-radius: 4px;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px dashed #ff0000;
         }
 
         .warning-text-english {
             color: #000;
             font-weight: normal;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             direction: ltr;
             text-align: center;
@@ -130,50 +133,78 @@
         .main-description {
             text-align: center;
             font-weight: normal;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             max-width: 800px;
             margin: 30px auto;
+            color: #444;
         }
         
         .arabic-text {
-            font-family: 'Traditional Arabic', 'Arial Arabic', 'Simplified Arabic', sans-serif;
-            font-size: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1rem;
             direction: rtl;
             display: block;
-            margin-top: 5px;
+            margin-top: 10px;
+        }
+
+        /* Sticker Example */
+        .sticker-example {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .sticker-example img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .sticker-label {
+            display: block;
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #666;
         }
 
         /* Input Section */
         .input-instruction {
             text-align: center;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin: 20px 0 10px 0;
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
+            color: #333;
         }
 
         .input-instruction .arabic-text {
             font-weight: normal;
-            font-size: 1rem;
-            margin-top: 5px;
+            font-size: 1.1rem;
+            margin-top: 8px;
         }
 
         .input-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 10px auto 20px auto;
+            margin: 15px auto 25px auto;
         }
 
         .input-container input {
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
+            padding: 12px 18px;
+            border: 2px solid #ddd;
+            font-size: 1.1rem;
             outline: none;
             text-align: left;
-            height: 45px;
-            width: 250px;
-            border-radius: 4px 0 0 4px;
+            height: 50px;
+            width: 280px;
+            border-radius: 6px 0 0 6px;
             border-right: none;
             transition: border-color 0.3s;
         }
@@ -183,15 +214,15 @@
         }
 
         .input-container button {
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #a8822b;
             color: white;
             border: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            height: 45px;
-            border-radius: 0 4px 4px 0;
+            height: 50px;
+            border-radius: 0 6px 6px 0;
             font-weight: bold;
         }
 
@@ -206,28 +237,28 @@
 
         /* Result Area */
         #result {
-            margin: 20px auto;
-            padding: 15px;
-            font-size: 1.1rem;
-            max-width: 450px;
-            min-height: 50px;
+            margin: 25px auto;
+            padding: 20px;
+            font-size: 1.2rem;
+            max-width: 500px;
+            min-height: 60px;
             text-align: center;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.3s ease;
         }
         
         /* Success/Error messages */
         .success {
-            color: green;
+            color: #2e7d32;
             font-weight: bold;
-            background-color: #f0fff0;
+            background-color: #edf7ed;
             border: 1px solid #c3e6c3;
         }
 
         .error {
-            color: red;
+            color: #c62828;
             font-weight: bold;
-            background-color: #fff0f0;
+            background-color: #ffebee;
             border: 1px solid #f5c6cb;
         }
 
@@ -248,54 +279,50 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Sticker example styling */
-        .sticker-example {
+        /* Footer */
+        .footer {
+            padding: 40px 0 20px;
+            border-top: 1px solid #eaeaea;
+            margin-top: 50px;
             text-align: center;
-            margin-bottom: 30px;
-            position: relative;
+            background-color: #f8f8f8;
+            border-radius: 0 0 8px 8px;
+            margin-left: -30px;
+            margin-right: -30px;
+            margin-bottom: -30px;
         }
 
-        .sticker-example img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .sticker-label {
-            display: block;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        /* Footer Links */
         .footer-links {
-            padding: 30px 0;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
         }
 
         .footer-links a {
-            color: #333;
+            color: #555;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
+            margin: 0 20px;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover {
+            color: #a8822b;
             text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 15px;
         }
 
         /* Security badge */
         .security-badge {
-            margin-top: 20px;
+            margin-top: 25px;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
@@ -306,23 +333,27 @@
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .container {
-                padding: 15px;
+                padding: 20px;
             }
 
             .header-content {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
             .breadcrumb {
-                margin-top: 10px;
-                text-align: left;
+                margin-top: 15px;
+                text-align: center;
                 width: 100%;
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
             .input-container {
@@ -331,14 +362,28 @@
 
             .input-container input {
                 width: 100%;
-                border-radius: 4px;
-                border-right: 1px solid #ccc;
-                margin-bottom: 10px;
+                border-radius: 6px;
+                border-right: 2px solid #ddd;
+                margin-bottom: 15px;
             }
 
             .input-container button {
                 width: 100%;
-                border-radius: 4px;
+                border-radius: 6px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+            }
+            
+            .footer-links a {
+                margin: 8px 0;
+            }
+            
+            .footer {
+                margin-left: -20px;
+                margin-right: -20px;
+                margin-bottom: -20px;
             }
         }
     </style>
@@ -357,7 +402,7 @@
         </div>
 
         <!-- Main Content -->
-        <h2>Warranty sticker validation</h2>
+        <h2>Warranty Sticker Validation</h2>
 
         <!-- Warning Section -->
         <div class="warning-section" role="alert" aria-labelledby="warning-heading">
@@ -399,7 +444,7 @@
                 <input type="text" id="numberInput" placeholder="XXXXXX" dir="ltr" maxlength="10" required aria-required="true" aria-describedby="inputHelp">
                 <button type="submit" id="checkButton">Check</button>
             </div>
-            <div id="inputHelp" style="text-align: center; font-size: 0.8rem; color: #666; margin-top: -10px; margin-bottom: 10px;">
+            <div id="inputHelp" style="text-align: center; font-size: 0.9rem; color: #666; margin-top: -15px; margin-bottom: 15px;">
                 Enter the 10-character code from your warranty sticker
             </div>
         </form>
@@ -411,13 +456,18 @@
             <i>🔒</i> Secure validation process
         </div>
         
-        <!-- Footer Links -->
-        <div class="footer-links">
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Service</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Arab Computers. All rights reserved.
+            </div>
         </div>
     </div>
 
