@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -196,6 +196,17 @@ html lang="ar" dir="rtl">
             min-height: 50px;
             text-align: center;
         }
+        
+        /* Success/Error messages */
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
 
         /* Footer Links (Simplified to match the target site's simple footer) */
         .footer-links {
@@ -214,6 +225,11 @@ html lang="ar" dir="rtl">
 
         .footer-links a:hover {
             text-decoration: underline;
+        }
+        
+        /* The original code had a complex footer structure which is simplified here for design consistency */
+        .links, .bottom-buttons, .dpp-section, .right-section {
+            display: none; /* Hide the complex footer elements from the original code for the new design */
         }
 
         /* Responsive Adjustments */
@@ -279,7 +295,7 @@ html lang="ar" dir="rtl">
                 <span class="warning-url">arabcomputers.com.sa/check-sticker</span>
             </p>
             
-            <p class="warning-text-english">
+            <p class="warning-text-english" dir="ltr">
                 **Important Notice to Our Valued Customers:**
                 We would like to alert you to the presence of counterfeit warranty stickers featuring a QR code that directs users to a fraudulent website designed to imitate the official Arab Computers website.
             </p>
@@ -319,27 +335,95 @@ html lang="ar" dir="rtl">
         </div>
     </div>
 
-    <!-- The original script is preserved but simplified as the validation logic is not the main task -->
+    <!-- Original JavaScript Code (Preserved) -->
     <script>
-        // Placeholder function for validation
         function validateForm(event) {
             event.preventDefault();
-            const input = document.getElementById('numberInput').value.trim();
-            const resultDiv = document.getElementById('result');
+            const button = event.target;
+            const allowedCodes = ["2KKDX1RNX0","3ANMH9TBMT", 
+"9KM8W29CZR",
+"70JWY71Q4A",
+"8NIOQ48MSA",
+"2WI9L47HYS",
+"8HPTA669CJ",
+"2UPUN62UUT",
+"32IKL11ZQZ",
+"1VXPR71NUN",
+"6KQRY6342Y",
+"40EVU75D3E",
+"0DM3Q04WRB",
+"5VB4A54TTQ",
+"03UHW53M0G",
+"7LJIL05UPM",
+"2JMMC96GXP",
+"3SN3F10QSV",
+"00R4Z8891M",
+"5ZM6Q20TUN",
+"7CYES128FB",
+"4AP9Q96W6X",
+"1TMON919VT",
+"62UMC952FB",
+"6IEQZ18NYP",
+"6VVMP7697U",
+"8SPUD54I1Q",
+"80BWP2682K",
+"1MDDP44JLY",
+"4GGOD60ZUC",
+"77L4I16N8Z",
+"7KJYT3064D",
+"7YY0M12WQT",
+"0UHKN331RJ",
+"0IUAV4559Y",
+"5QI7C1595L",
+"7JHPQ4309E",
+"9WD6Q32RAH",
+"6RYKH65SIP",
+"03QBH23VGN",
+"3YANF25CKE",
+"4RSXY55L1F",
+"53V4T9709I",
+"06JND38AKY",
+"6KI8D57ZNY",
+"81UYM15CYT",
+"1ZZKU15P8J",
+"9JBWI05UUM",
+"2GPIQ19ZPS",
+"2QYBC21C3E",
+"79J0W8208T",
+"5GLKM47FDE",
+"0ZPAV75BNC",
+"8UK7R05VEX",
+"2HKIO4311A",
+"4GKFZ36WDD",
+"5EZ8N633LP",
+"3QFD18EA78" ];
+            const numberInput = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
             
-            // Simple placeholder logic
-            if (input.length > 5) {
-                resultDiv.innerHTML = '<span style="color: green; font-weight: bold;">الرمز صحيح!</span>';
-            } else if (input.length > 0) {
-                resultDiv.innerHTML = '<span style="color: red; font-weight: bold;">الرمز غير صحيح.</span>';
-            } else {
-                resultDiv.innerHTML = '';
-            }
+            button.classList.add('pressed');
+
+            resultElement.className = '';
+            resultElement.textContent = '';
+
+            const usedCodes = JSON.parse(localStorage.getItem("usedCodes")) || [];
+
+            setTimeout(() => {
+                if (usedCodes.includes(numberInput)) {
+                    resultElement.textContent = "code is already used❌ تم استخدام هذا الرمز !";
+                    resultElement.className = 'error';
+                } else if (allowedCodes.includes(numberInput)) {
+                    usedCodes.push(numberInput);
+                    localStorage.setItem("usedCodes", JSON.stringify(usedCodes));
+                    resultElement.textContent = "The code is correct ✅ هذا الرمز صحيح!";
+                    resultElement.className = 'success';
+                } else {
+                    resultElement.textContent = "Code not found ❌ هذا الرمز غير موجود !";
+                    resultElement.className = 'error';
+                }
+                
+                button.classList.remove('pressed');
+            }, 500);
         }
-        
-        // Note: The original code contained a large list of codes and a complex hash function.
-        // This refactored version uses a simple placeholder function, as the focus was on the design.
-        // The original complex script logic can be re-integrated if needed.
     </script>
 </body>
 </html>
