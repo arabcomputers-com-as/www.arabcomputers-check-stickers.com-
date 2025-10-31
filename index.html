@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
             padding: 30px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for definition */
-            text-align: right; /* Default text alignment for RTL content */
+            text-align: left; /* Default text alignment for LTR content */
         }
 
         /* Header and Logo Area */
@@ -55,7 +55,7 @@
         .breadcrumb {
             font-size: 0.9rem;
             color: #777;
-            text-align: left; /* Align breadcrumb to the left */
+            text-align: right; /* Align breadcrumb to the right */
         }
 
         .breadcrumb a {
@@ -97,7 +97,8 @@
             font-weight: bold;
             font-size: 1.1rem;
             line-height: 1.8;
-            direction: rtl;
+            direction: rtl; /* Force RTL for Arabic text */
+            text-align: center; /* Center the Arabic warning text */
         }
 
         .warning-url {
@@ -115,7 +116,7 @@
             font-size: 1rem;
             line-height: 1.6;
             direction: ltr;
-            text-align: left;
+            text-align: center; /* Center the English warning text */
             margin-top: 20px;
         }
         
@@ -132,7 +133,7 @@
         .arabic-text {
             font-family: 'Traditional Arabic', 'Arial Arabic', 'Simplified Arabic', sans-serif;
             font-size: 1rem;
-            direction: rtl;
+            direction: rtl; /* Force RTL for Arabic text */
             display: block;
             margin-top: 5px;
         }
@@ -245,7 +246,7 @@
 
             .breadcrumb {
                 margin-top: 10px;
-                text-align: right;
+                text-align: left;
                 width: 100%;
             }
 
@@ -267,13 +268,13 @@
     <div class="container">
         <!-- Top Section: Logo and Breadcrumb -->
         <div class="header-content">
-            <!-- Logo - Now a clickable link -->
+            <!-- Logo - Now a clickable link, correctly positioned on the left -->
             <a href="https://arabcomputers.com.sa" class="logo-link">
                 <!-- Using a placeholder image for the official logo -->
                 <img src="https://i.postimg.cc/zvf2c47L/image.png" alt="Arab Computers Logo" class="logo">
             </a>
             
-            <!-- Breadcrumb - Aligned to the left in the container -->
+            <!-- Breadcrumb - Correctly positioned on the right -->
             <div class="breadcrumb">
                 <a href="#">Home</a> / Check sticker
             </div>
@@ -427,4 +428,3 @@
     </script>
 </body>
 </html>
-
